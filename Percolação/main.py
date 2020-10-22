@@ -26,5 +26,7 @@ def main():
     print(sis3)
     print(sis4)
     
+    print(sis4.get_grid())
+    print(sis4.no_open())
 
 main()

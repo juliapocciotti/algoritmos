@@ -38,36 +38,29 @@ class Percolation:
         rede += f'\ngrade de dimensão: {n}x{m}'
         return rede 
 
+    def is_open(self, lin, col):
+        if self.grid[lin, col] == OPEN:
+            return True
+        return False 
+            
+    def is_full(self, lin, col):
+        if self.grid[lin, col] == FULL:
+            return True
+        return False 
 
-
-
-
-
-
-
-
-
-
-'''   
-def main():
-    sis1 = Percolation(1)
+    def no_open(self):
+        n_open = []
+        for i in self.grid[:, :]:
+            for j in i:
+                if j == OPEN:
+                    n_open.append(j)
+        return len(n_open)
     
-    sis2 = Percolation(2)
-    
-    sis3 = Percolation((3,2))
-    
-    sis4 = Percolation((3, 4))
-    
-    print(sis1.shape)
-    print(sis2.shape)
-    print(sis3.shape)
-    print(sis4.shape)
-    
-    print(sis1, '\n')
-    print(sis2, '\n')
-    print(sis3, '\n')
-    print(sis4, '\n')
-    
-if __name__ == '__main__':
-    main()
-'''
+    def get_grid(self):
+        return self.grid[:]
+        
+        
+        
+        
+        
+        
